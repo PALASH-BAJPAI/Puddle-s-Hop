@@ -26,6 +26,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+/**********************************************************Score data************************************************/
+var score=0;
+function countScore(){
+    if(!gameOver){
+        score++;
+        // console.log(score);
+    }
+}
+
+
+
+
 /**********************************************************Pig data************************************************/
 //Pig
 let pigWidth =96;
@@ -139,13 +151,15 @@ hurdle4Img.src = 'assets/hurdles/hurdle4.png';
 
 
 //decide speed of hurdle
-let velocityX = -5;
+let velocityX = -3;
 window.onload=function(){
     if(!gameOver){
     let timeGap = Math.random()*1000;
     requestAnimationFrame(update);
+    setInterval(countScore,100);
     setInterval(placeHurdle,1000+timeGap);  // code to place hurdles
     }
+    
 }
 
 function update(){
@@ -155,7 +169,7 @@ function update(){
     for(let i=0; i<hurdles.length; i++){
       
         let hurdle = hurdles[i];
-        hurdle.x += velocityX;
+        hurdle.x += velocityX-score/1000;  //increase speed of hurdles with score
         context.drawImage(hurdle.img, hurdle.x, hurdle.y, hurdle.width, hurdle.height);
         //detect collision for each cactus
         if(detectCollision(hurdle, pig)){
