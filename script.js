@@ -181,6 +181,7 @@ function update(){
             audio.pause();
             const audio2 = document.getElementById('gameOver-audio');
             audio2.play();
+            endGame()
         }
         if(gameOver){
             return;
@@ -233,4 +234,22 @@ function detectCollision(a,b){
            a.y < b.y + b.height && // a's top left corner doesn't reach b'd bottom left corner
            a.y + a.height > b.y;  //a's bottom left corner passes b't top left corner
 
+}
+
+/**********************************************************Game Over************************************************/
+// End game
+const gameOverAlert = document.getElementById('gameOverAlert');
+const finalScore = document.getElementById('finalScore');
+function endGame() {
+    gameOver = true;
+    gameOverAlert.classList.remove('hidden');
+    gameOverAlert.classList.add('gameOverAlert');
+    scoreBox.innerHTML='';
+    finalScore.innerHTML = `Final Score : ${score}`;
+}
+
+// Restart game
+function restartGame() {
+    window.location.reload(); 
+    console.log("!@!");
 }

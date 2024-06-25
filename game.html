@@ -15,6 +15,13 @@
     <audio id="gameOver-audio" src="assets/gameOver.wav" ></audio>
     <div id="score">
     </div>
+    <div id="gameOverAlert" class="hidden">
+        <div class="alertBox">
+            <p id="finalScore"></p>
+            <img src="assets/lostPig.png">
+            <button onclick=location.reload()>Play Again !</button>
+        </div>
+    </div>
     <div class="canvas-container">
         <canvas id="board"></canvas>
     </div>
