@@ -28,12 +28,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 /**********************************************************Score data************************************************/
 var score=0;
+let scoreBox = document.getElementById('score');
 function countScore(){
     if(!gameOver){
         score++;
         // console.log(score);
+        scoreBox.innerHTML =  `Score : ${score}`
     }
 }
+
+
 
 
 
@@ -156,7 +160,7 @@ window.onload=function(){
     if(!gameOver){
     let timeGap = Math.random()*1000;
     requestAnimationFrame(update);
-    setInterval(countScore,100);
+    setInterval(countScore,500);
     setInterval(placeHurdle,1000+timeGap);  // code to place hurdles
     }
     
