@@ -19,7 +19,8 @@
         <div class="alertBox">
             <p id="finalScore"></p>
             <img src="assets/lostPig.png">
-            <button onclick=location.reload()>Play Again !</button>
+            <button onclick=location.reload()>Play Again</button>
+            <button id="goHome" class="backHome">Home</button>   
         </div>
     </div>
     <div class="canvas-container">
@@ -29,5 +30,10 @@
         <img src="assets/ground.jpg" alt="Description of image">
     </div>
     <script type="module" src="script.js"></script>
+    <script>
+        document.getElementById("goHome").addEventListener("click", () => {
+            window.location.href = "index.html";
+        });
+    </script>
 </body>
 </html>

@@ -105,3 +105,12 @@ img {
   color: black;
   border-radius: 15px;
 }
+
+.backHome{
+  background:rgb(157, 208, 247);
+  margin-top: 20px;
+  padding:5px 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: black;
+}
