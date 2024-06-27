@@ -221,7 +221,7 @@ function placeHurdle(){
         hurdles.push(hurdle);
     }
     //Limit number of hurdles in hurdle array(remove non visible hurdles)
-    if(hurdles.length>6){
+    if(hurdles.length>8){
         hurdles.shift() // remove first element of array
     }
 }
